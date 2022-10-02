@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import MapFull from "../img/MapFull.png";
+import StampFull from "../img/StampFull.png";
 
 const Size = styled.div`
   width: 323px;
 `;
 
-function ZoomMap() {
+function ZoomStamp() {
   return (
     <TransformWrapper initialScale={1} minScale={1} maxScale={10}>
       <TransformComponent>
         <Size>
           <img
-            src={MapFull}
+            src={StampFull}
             style={{
               width: "100%",
               height: "100%",
@@ -28,4 +28,4 @@ function ZoomMap() {
   );
 }
 
-export default ZoomMap;
+export default ZoomStamp;

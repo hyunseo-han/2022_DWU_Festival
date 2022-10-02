@@ -6,7 +6,7 @@ import EventMap from "./event/EventMap";
 import SomTalk from "./talk/SomTalk";
 import Home from "./main/Home";
 import Map from "./main/Map";
-import Stamp from "./main/Map";
+import Stamp from "./main/Stamp";
 import Header from "./pages/Header";
 import InfoDDD from "./introduce/InfoDDD";
 import InfoStaff from "./introduce/InfoStaff";
@@ -30,17 +30,17 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<RouteInfo />}>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/CampusMap" element={<Map />}></Route>
-            <Route path="/Stamp" element={<Stamp />}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/CampusMap" element={<Map />} />
+            <Route path="/Stamp" element={<Stamp />} />
             <Route path="/event" element={<EventHome />} />
             <Route path="/event/detail:id" element={<EventDetail />} />
-            <Route path="/eventmap" element={<EventMap />} />
+            <Route path="/event/eventmap" element={<EventMap />} />
             <Route path="/intro" element={<InTro />}>
-              <Route path="/intro/InfoDDD" element={<InfoDDD />}></Route>
-              <Route path="/intro/InfoStaff" element={<InfoStaff />}></Route>
-              <Route path="/intro/InfoLikeLion" element={<InfoLion />}></Route>
+              <Route path="/intro/InfoDDD" element={<InfoDDD />} />
+              <Route path="/intro/InfoStaff" element={<InfoStaff />} />
+              <Route path="/intro/InfoLikeLion" element={<InfoLion />} />
             </Route>
             <Route path="/timetable" element={<TimeTable />} />
           </Route>

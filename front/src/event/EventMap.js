@@ -1,13 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-const MapImgDiv = styled.div`
-  border-radius: 3% 3% 0px 0px;
-  margin: 26px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import Zoom from "./ZoomBooth";
 
 const MapHeaderImg = styled.div`
   height: 120px;
@@ -45,45 +38,73 @@ const MapImg = styled.img`
   }
 `;
 
-const MapInfo = styled.div`
-  width: 80%;
+const ImageBox = styled.div`
+  box-sizing: border-box;
+  width: 327px;
   border: 2px solid #e0c895;
+  border-radius: 10px 10px 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+`;
+
+const WhiteBox = styled.div`
+  box-sizing: border-box;
+  width: 327px;
+  height: 64px;
+  background: #fffefa;
+  border-width: 0px 2px 2px 2px;
+  border-style: solid;
+  border-color: #e0c895;
   border-radius: 0px 0px 10px 10px;
-  border-top: 0;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-  }
+  margin-left: auto;
+  margin-right: auto;
 `;
-const MapInfoRow = styled.div`
-  display: flex;
+
+const Adress = styled.div`
+  position: relative;
+  width: 300px;
+  height: 16px;
+  left: 12px;
+  top: 12px;
   font-weight: 700;
-  font-size: 1.5em;
-  justify-content: center;
-  padding: 20px;
-  &:first-child {
-    padding-bottom: 20px;
-  }
-  @media only screen and (max-width: 600px) {
-    padding: 12px;
-    font-size: 16px;
-    &:first-child {
-      padding-bottom: 10px;
-    }
-  }
-`;
-const MapInfoRowTitle = styled.div`
+  font-size: 14px;
+  line-height: 16px;
   color: #8b2842;
-  width: 20%;
-  @media only screen and (max-width: 700px) {
-    width: 30%;
-  }
 `;
-const MapInfoRowcontent = styled.div`
+
+const Phone = styled.div`
+  position: relative;
+  width: 300px;
+  height: 16px;
+  left: 12px;
+  top: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8b2842;
+`;
+
+const TextContents = styled.span`
   color: #805e4a;
-  width: 50%;
-  @media only screen and (max-width: 700px) {
-    width: 70%;
-  }
+`;
+
+const Text = styled.div`
+  width: 200px;
+  height: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #5f4637;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: -5%;
+`;
+
+const AdressContent = styled.span`
+  color: #805e4a;
 `;
 
 function EventMap() {
@@ -102,21 +123,21 @@ function EventMap() {
           alt="우리학교"
         />
       </MapHeaderImg>
-      <MapImgDiv>
-        <MapImg src={require("../img/eventmap.png")} />
-        <MapInfo>
-          <MapInfoRow>
-            <MapInfoRowTitle>주소</MapInfoRowTitle>
-            <MapInfoRowcontent>
-              서울특별시 성북구 화랑로 13길 60{" "}
-            </MapInfoRowcontent>
-          </MapInfoRow>
-          <MapInfoRow>
-            <MapInfoRowTitle>전화번호</MapInfoRowTitle>
-            <MapInfoRowcontent>02&#41; 940 - 4000</MapInfoRowcontent>
-          </MapInfoRow>
-        </MapInfo>
-      </MapImgDiv>
+      <Text>*지도를 확대하세요</Text>
+      <ImageBox>
+        <Zoom></Zoom>
+      </ImageBox>
+      <WhiteBox>
+        <Adress>
+          주소
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <AdressContent>서울특별시 성북구 화랑로 13길 60</AdressContent>
+        </Adress>
+        <Phone>
+          전화번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <TextContents>02 - 940 - 4000</TextContents>
+        </Phone>
+      </WhiteBox>
     </>
   );
 }

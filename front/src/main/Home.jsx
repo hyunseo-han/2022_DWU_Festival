@@ -259,7 +259,7 @@ function Home() {
                   height: "100%",
                   objectFit: "cover",
                 }}
-                alt="우령솜솜1"
+                alt="유령솜솜1"
               />
             </Somsom3>
           </div>

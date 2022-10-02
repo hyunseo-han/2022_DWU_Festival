@@ -164,7 +164,7 @@ function EventHome() {
         </InputBtn>
       </SearchForm>
       <EventMapLink>
-        <Link to={"/eventmap"} style={{ borderBottom: "1px solid" }}>
+        <Link to={"/event/eventmap"} style={{ borderBottom: "1px solid" }}>
           부스 / 주점 지도 바로가기
         </Link>
       </EventMapLink>
